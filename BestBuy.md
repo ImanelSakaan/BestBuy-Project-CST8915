@@ -38,5 +38,31 @@ aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7
 aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
 aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 ```
+Here’s your snippet formatted in **GitHub Markdown**:
+
+```markdown
+```powershell
+PS D:\BestBuyProject> kubectl apply -f Bestbuy-store-all-in-one.yaml
+deployment.apps/rabbitmq created
+service/rabbitmq created
+deployment.apps/order-service created
+service/order-service created
+deployment.apps/product-service created
+service/product-service created
+deployment.apps/store-front created
+service/store-front created
+
+PS D:\BestBuyProject> kubectl get nodes
+NAME                                  STATUS   ROLES    AGE    VERSION
+aks-masterpool-38310052-vmss000000    Ready    <none>   149m   v1.31.7
+aks-workerspool-38310052-vmss000000   Ready    <none>   149m   v1.31.7
+aks-workerspool-38310052-vmss000001   Ready    <none>   149m   v1.31.7
+
+PS D:\BestBuyProject>
+```
+```
+
+
+
 ```
 
