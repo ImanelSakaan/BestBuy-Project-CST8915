@@ -1,6 +1,37 @@
-###BestBuy-Project-CST8915
-Lab Project Assignment: Building a Cloud-Native App for Best Buy
+### BestBuy-Project-CST8915
+Building a Cloud-Native App for Best Buy
 
 ## Information
 
-### **Some Important Information**
+PS D:\BestBuyProject\store-front-L8> kubectl version	
+Client Version: v1.32.2	
+Kustomize Version: v5.5.0	
+	
+PS D:\BestBuyProject\store-front-L8> az version	
+{	
+  "azure-cli": "2.70.0",	
+  "azure-cli-core": "2.70.0",	
+  "azure-cli-telemetry": "1.1.0",	
+  "extensions": {}	
+}	
+	
+[Tenant and subscription selection]	
+	
+No     Subscription name    Subscription ID                       Tenant	
+-----  -------------------  ------------------------------------  -----------------	
+[1] *  AVD-Prod             cf8bfe92-3d85-4f0a-bbd1-ae319eefc4ee  Algonquin College	
+[2]    Azure for Students   63b5363b-132e-49e5-969c-286c6a12c8dc  Algonquin College	
+	
+The default is marked with an *; the default tenant is 'Algonquin College' and subscription is 'AVD-Prod' (cf8bfe92-3d85-4f0a-bbd1-ae319eefc4ee).	
+	
+az account set --subscription '63b5363b-132e-49e5-969c-286c6a12c8dc'	
+PS D:\BestBuyProject\store-front-L8> az aks get-credentials --resource-group BestbuyRG --name BestbuyCluster --overwrite-existing	
+Merged "BestbuyCluster" as current context in C:\Users\IMAN\.kube\config	
+PS D:\BestBuyProject\store-front-L8> 	
+	
+kubectl get nodes	
+NAME                                  STATUS   ROLES    AGE   VERSION	
+aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7	
+aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7	
+aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7	
+
