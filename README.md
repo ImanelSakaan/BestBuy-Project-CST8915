@@ -112,7 +112,7 @@ Here’s your content formatted for GitHub using proper Markdown syntax:
 cd order-service-L8
 ```
 
-In the `order-service` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
+In the `order-service-L8` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
 
 **Build the Docker image:**
 
@@ -166,6 +166,61 @@ docker build -t store-front:latest .
 ```bash
 docker run --rm -d -p 80:80 store-front:latest
 ```
+
+### Step 3: Using Docker Compose for Local Development
+
+## Step 3.1. Create a docker-compose.yml file
+In the root directory of your project (at the same level as the `order-service-L8`, `product-service`, and `store-front` directories), create a `docker-compose.yml` file:
+
+## Step 3.2. Run the application using Docker Compose
+In your terminal, run:
+```bash
+docker-compose up --build
+```
+This will build and run all the services together. You should be able to access the store-front at `http://localhost:80`.
+```
 ```
 
 
+### 🐳Step 2: Create an Azure Kubernetes Cluster (AKS)
+1. **Log in to Azure Portal:**
+   - Go to [https://portal.azure.com](https://portal.azure.com) and log in with your Azure account.
+
+2. **Create a Resource Group:**
+   - In the Azure Portal, search for **Resource Groups** in the search bar.
+   - Click **Create** and fill in the following:
+     - **Resource group name**: `BestbuyRG`
+     - **Region**: `Canada Central`.
+   - Click **Review + Create** and then **Create**.
+  
+3. **Create an AKS Cluster:**
+   - In the search bar, type **Kubernetes services** and click on it.
+   - Click **Create** and select **Kubernetes cluster**
+   - In the `Basics` tap fill in the following details:
+     - **Subscription**: Select your subscription.
+     - **Resource group**: Choose `BestbuyRG`.
+     - **Cluster preset configuration**: Choose `Dev/Test`.
+     - **Kubernetes cluster name**: `BestbuyCluster`.
+     - **Region**: Same as your resource group (e.g., `Canada Central`).
+     - **Availability zones**: `None`.
+     - **AKS pricing tier**: `Free`.
+     - **Kubernetes version**: `Default`.
+     - **Automatic upgrade**: `Disabled`.
+     - **Automatic upgrade scheduler**: `No schedule`.
+     - **Node security channel type**: `None`.
+     - **Security channel scheduler**: `No schedule`.
+     - **Authentication and Authorization**: `Local accounts with Kubernetes RBAC`.
+   - In the `Node pools` tap fill in the following details:
+     - Select **agentpool**. Optionally change its name to `masterpool`. This nodes will have the controlplane.
+        - Set **node size** to `D2as_v4`.
+        - **Scale method**: `Manual`
+        - **Node count**: `1`
+        - Click `update`
+     - Click on **Add node pool**:
+        - **Node pool name**: `workerspool`.
+        - **Mode**: `User` 
+        - Set **node size** to `D2as_v5`.
+        - **Scale method**: `Manual`
+        - **Node count**: `1`
+        - Click `add`
+   - Click **Review + Create**, and then **Create**. The deployment will take a few minutes.
