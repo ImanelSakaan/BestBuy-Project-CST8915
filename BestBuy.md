@@ -40,4 +40,3 @@ aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 ```
 ```
 
-Let me know if you'd like this turned into a full `README.md` or lab report!
