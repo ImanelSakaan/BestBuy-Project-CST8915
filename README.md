@@ -61,11 +61,11 @@ This document outlines the architecture of the Best Buy microservices applicatio
 
 ## 🤖 Simulated Workers
 
-### 🧑‍💻 `virtual-customer` (Rust)
+### 🧑‍💻 `virtual-customer` 
 - Simulates customer behavior by placing orders on a schedule.
 - Calls the `order-service`.
 
-### 🛠️ `virtual-worker` (Rust)
+### 🛠️ `virtual-worker` 
 - Simulates kitchen workers completing orders.
 - Interacts with `makeline-service`.
 
