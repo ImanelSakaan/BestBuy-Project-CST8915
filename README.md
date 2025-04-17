@@ -1,7 +1,11 @@
 # BestBuy-Project-CST8915
 Lab Project Assignment: Building a Cloud-Native App for Best Buy
+## **Scenario**  
+Welcome to the Best Buy application.
 
-# System Architecture Overview
+This application consists of containerized microservices that can be easily deployed into a Kubernetes cluster. This is meant to show a realistic scenario using a polyglot architecture, event-driven design, and common open source back-end services (eg, RabbitMQ, MongoDB). The application also leverages OpenAI's models to generate product descriptions and images. This can be done using either Azure OpenAI or OpenAI.
+
+# 1. Application Architecture Overview
 
 This document outlines the architecture of the Best Buy microservices application.
 ![image](https://github.com/user-attachments/assets/19422ce3-3682-45bb-a1db-55a0687abf29)
@@ -79,3 +83,7 @@ order-service → RabbitMQ → makeline-service
 store-admin ↔ product-service / makeline-service
 virtual-customer → order-service
 virtual-worker → makeline-service
+
+---
+
+# 2. Microservices Development
