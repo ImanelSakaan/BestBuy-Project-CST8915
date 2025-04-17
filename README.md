@@ -104,7 +104,7 @@ The application has the following services:
 
 ## 2. Deployment Instructions
 
-### Step 1: Fork and Clone the Repositories
+### 🌐 Step 1: Fork and Clone the Repositories
 
 ```bash
 git clone https://github.com/ImanelSakaan/store-front-L8.git
