@@ -84,6 +84,20 @@ store-admin ↔ product-service / makeline-service
 virtual-customer → order-service
 virtual-worker → makeline-service
 
----
+```
 
-# 2. Microservices Development
+## 2. Deployment Instructions
+
+### Step 1: Fork and Clone the Repositories
+
+```bash
+git clone https://github.com/ImanelSakaan/store-front-L8.git
+git clone https://github.com/shaoxian423/store-admin-L8.git
+git clone https://github.com/ImanelSakaan/order-service-L8.git
+git clone https://github.com/ramymohamed10/product-service-L8.git
+git clone https://github.com/shaoxian423/makeline-service-L8.git
+git clone https://github.com/ImanelSakaan/ai-service-L8.git
+git clone https://github.com/ImanelSakaan/rabbitmq.git
+git clone https://github.com/ImanelSakaan/mongo.git
+git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
+git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
