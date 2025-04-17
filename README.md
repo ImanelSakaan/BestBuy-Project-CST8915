@@ -119,83 +119,6 @@ git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
 git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
 ```
 
-### 🐳 Step 2: Containerizing the Algonquin Pet Store Microservices
-Here’s your content formatted for GitHub using proper Markdown syntax:
-
-### 🔹 Step 2.1. Dockerize the `order-service`
-
-```bash
-cd order-service-L8
-```
-
-In the `order-service-L8` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
-
-**Build the Docker image:**
-
-```bash
-docker build -t order-service:latest .
-```
-
-**Run a Docker container from `order-service:latest` and expose it on port 3000:**
-
-```bash
-docker run --rm -d -p 3000:3000 order-service:latest
-```
-
----
-
-### 🔹 Step 2.2. Dockerize the `product-service`
-
-```bash
-cd product-service-L8
-```
-
-In the `product-service-L8` directory, create a `Dockerfile` with the appropriate content.
-
-**Build the Docker image:**
-
-```bash
-docker build -t product-service:latest .
-```
-
-**Run the container on port 3030:**
-
-```bash
-docker run --rm -d -p 3030:3030 product-service:latest
-```
-
-### 🔹 Step 2.3. Dockerize the `store-front`
-
-```bash
-cd ..
-cd store-front-L8
-```
-
-**Build the Docker image:**
-
-```bash
-docker build -t store-front:latest .
-```
-
-**Run the container on port 80:**
-
-```bash
-docker run --rm -d -p 80:80 store-front:latest
-```
-
-### Step 3: Using Docker Compose for Local Development
-
-## Step 3.1. Create a docker-compose.yml file
-In the root directory of your project (at the same level as the `order-service-L8`, `product-service`, and `store-front` directories), create a `docker-compose.yml` file:
-
-## Step 3.2. Run the application using Docker Compose
-In your terminal, run:
-```bash
-docker-compose up --build
-```
-This will build and run all the services together. You should be able to access the store-front at `http://localhost:80`.
-```
-```
 
 
 ### 🐳Step 2: Create an Azure Kubernetes Cluster (AKS)
@@ -271,4 +194,63 @@ This will build and run all the services together. You should be able to access 
          aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
+---
+### 🟠Step 3: Deploy the Best Buy Application
+
+1. **Apply the YAML file to the AKS cluster:**
+   - In this step, use the K8s deployment YAML file provided: `algonquin-pet-store-all-in-one.yaml`.
+   - Open the terminal and navigate to the file directory.
+   - Run the following command to apply the YAML configuration and deploy the application to AKS:
+      ```
+      kubectl apply -f algonquin-pet-store-all-in-one.yaml
+      ```
+
+2. **Verify the deployment:**
+   - After the command executes, verify that the pods are running by using the following command:
+     ```bash
+     kubectl get pods
+     ```
+
+3. **Check services:**
+   - Confirm that all services are up and running:
+     ```bash
+     kubectl get services
+     ```
+
+4. **Access the Store Front Application:**
+   - The **Store Front** service is configured as a LoadBalancer, which exposes the application to the internet.
+   - In the Azure Portal, go to **Kubernetes Services** > **AlgonquinPetStoreCluster** > **Services and ingresses**.
+   - Locate the **store-front** service, and note the **EXTERNAL-IP** address.
+
+5. **Test the Store Front:**
+   - Open a web browser and enter the external IP address to access the Store Front (You may need to wait about one minute).
+
+6. **Verifying the backend services**:
+   - `order-service` is accessible at:
+      ```
+      http://<EXTERNAL-IP>/orders
+      ``` 
+   - `product-service` is accessible at:
+      ```
+      http://<EXTERNAL-IP>/products
+      ``` 
+   - `RabbitMQ Management Dashboard` is accessible at:
+      ```
+      http://<EXTERNAL-IP>/rabbitmq
+      ``` 
+      - Use the following credentials to log in:
+        - Username: myuser
+        - Password: mypassword
+7. Clean Up Kubernetes Resources:
+- In this step, use the K8s deployment YAML file provided: `.
+   - Open the terminal and navigate to the `algonquin-pet-store-all-in-one.yaml` file directory.
+   - Run the following command to delete all resources defined in the YAML file.
+      ```
+      kubectl delete -f algonquin-pet-store-all-in-one.yaml
+      ``` 
+8. Clean Up Azure Resources:
+   - Delete the Primary Resource Group (AlgonquinPetStoreRG)
+   - Delete the Managed Cluster Resource Group (MC_AlgonquinPetStoreRG_AlgonquinPetStoreRG_canadacentral)
+   - Delete the Monitoring Resource Group (MA_defaultazuremonitorworkspace-cca_canadacentral_managed)
+   - Delete the Network Watcher Resource Group (NetworkWatcherRG):
 ---
