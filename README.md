@@ -90,7 +90,6 @@ virtual-worker → makeline-service
 
 ### Step 1: Fork and Clone the Repositories
 
-```bash
 git clone https://github.com/ImanelSakaan/store-front-L8.git
 git clone https://github.com/shaoxian423/store-admin-L8.git
 git clone https://github.com/ImanelSakaan/order-service-L8.git
@@ -101,3 +100,96 @@ git clone https://github.com/ImanelSakaan/rabbitmq.git
 git clone https://github.com/ImanelSakaan/mongo.git
 git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
 git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
+
+### 🐳 Step 2: Containerizing the Algonquin Pet Store Microservices
+Here’s your content formatted for GitHub using proper Markdown syntax:
+
+### 🔹 Step 2.1. Dockerize the `order-service`
+
+```bash
+cd order-service
+```
+
+In the `order-service` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
+
+**Build the Docker image:**
+
+```bash
+docker build -t order-service:latest .
+```
+
+**Run a Docker container from `order-service:latest` and expose it on port 3000:**
+
+```bash
+docker run --rm -d -p 3000:3000 order-service:latest
+```
+
+---
+
+### 🔹 Step 2.2. Dockerize the `product-service`
+
+You can choose between the **Python** or **Rust** implementation of the `product-service`.
+
+#### 👉 Python Version
+
+```bash
+cd product-service-python-L4
+```
+
+In the `product-service-python-L4` directory, create a `Dockerfile` with the appropriate content.
+
+**Build the Docker image:**
+
+```bash
+docker build -t product-service-python:latest .
+```
+
+**Run the container on port 3030:**
+
+```bash
+docker run --rm -d -p 3030:3030 product-service-python:latest
+```
+
+#### 👉 Rust Version
+
+```bash
+cd product-service-rust-L4
+```
+
+In the `product-service-rust-L4` directory, create a `Dockerfile` with the appropriate content.
+
+**Build the Docker image:**
+
+```bash
+docker build -t product-service-rust:latest .
+```
+
+**Run the container on port 3030:**
+
+```bash
+docker run --rm -d -p 3030:3030 product-service-rust:latest
+```
+
+---
+
+### 🔹 Step 2.3. Dockerize the `store-front`
+
+```bash
+cd ..
+cd store-front-L4
+```
+
+**Build the Docker image:**
+
+```bash
+docker build -t store-front:latest .
+```
+
+**Run the container on port 80:**
+
+```bash
+docker run --rm -d -p 80:80 store-front:latest
+```
+```
+
+Let me know if you'd like the rest of the services formatted in the same way!
