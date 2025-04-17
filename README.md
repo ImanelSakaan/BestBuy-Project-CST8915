@@ -109,7 +109,7 @@ Here’s your content formatted for GitHub using proper Markdown syntax:
 ### 🔹 Step 2.1. Dockerize the `order-service`
 
 ```bash
-cd order-service
+cd order-service-L8
 ```
 
 In the `order-service` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
@@ -130,55 +130,29 @@ docker run --rm -d -p 3000:3000 order-service:latest
 
 ### 🔹 Step 2.2. Dockerize the `product-service`
 
-You can choose between the **Python** or **Rust** implementation of the `product-service`.
-
-#### 👉 Python Version
-
 ```bash
-cd product-service-python-L4
+cd product-service-L8
 ```
 
-In the `product-service-python-L4` directory, create a `Dockerfile` with the appropriate content.
+In the `product-service-L8` directory, create a `Dockerfile` with the appropriate content.
 
 **Build the Docker image:**
 
 ```bash
-docker build -t product-service-python:latest .
+docker build -t product-service:latest .
 ```
 
 **Run the container on port 3030:**
 
 ```bash
-docker run --rm -d -p 3030:3030 product-service-python:latest
+docker run --rm -d -p 3030:3030 product-service:latest
 ```
-
-#### 👉 Rust Version
-
-```bash
-cd product-service-rust-L4
-```
-
-In the `product-service-rust-L4` directory, create a `Dockerfile` with the appropriate content.
-
-**Build the Docker image:**
-
-```bash
-docker build -t product-service-rust:latest .
-```
-
-**Run the container on port 3030:**
-
-```bash
-docker run --rm -d -p 3030:3030 product-service-rust:latest
-```
-
----
 
 ### 🔹 Step 2.3. Dockerize the `store-front`
 
 ```bash
 cd ..
-cd store-front-L4
+cd store-front-L8
 ```
 
 **Build the Docker image:**
@@ -194,4 +168,4 @@ docker run --rm -d -p 80:80 store-front:latest
 ```
 ```
 
-Let me know if you'd like the rest of the services formatted in the same way!
+
