@@ -90,6 +90,7 @@ virtual-worker → makeline-service
 
 ### Step 1: Fork and Clone the Repositories
 
+```bash
 git clone https://github.com/ImanelSakaan/store-front-L8.git
 git clone https://github.com/shaoxian423/store-admin-L8.git
 git clone https://github.com/ImanelSakaan/order-service-L8.git
@@ -100,6 +101,7 @@ git clone https://github.com/ImanelSakaan/rabbitmq.git
 git clone https://github.com/ImanelSakaan/mongo.git
 git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
 git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
+```
 
 ### 🐳 Step 2: Containerizing the Algonquin Pet Store Microservices
 Here’s your content formatted for GitHub using proper Markdown syntax:
