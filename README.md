@@ -267,5 +267,8 @@ This will build and run all the services together. You should be able to access 
         ```
         kubectl get nodes
         ```
-        You should see details of the nodes in your AKS cluster if the connection is successful.
+        NAME                                  STATUS   ROLES    AGE   VERSION
+         aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7
+         aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
+         aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 ---
