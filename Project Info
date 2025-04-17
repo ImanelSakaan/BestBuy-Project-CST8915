@@ -1,37 +1,79 @@
-### BestBuy-Project-CST8915
-Building a Cloud-Native App for Best Buy
+### 🐳 Step 2: Containerizing the Algonquin Pet Store Microservices
+Here’s your content formatted for GitHub using proper Markdown syntax:
 
-## Information
+### 🔹 Step 2.1. Dockerize the `order-service`
 
-PS D:\BestBuyProject\store-front-L8> kubectl version	
-Client Version: v1.32.2	
-Kustomize Version: v5.5.0	
-	
-PS D:\BestBuyProject\store-front-L8> az version	
-{	
-  "azure-cli": "2.70.0",	
-  "azure-cli-core": "2.70.0",	
-  "azure-cli-telemetry": "1.1.0",	
-  "extensions": {}	
-}	
-	
-[Tenant and subscription selection]	
-	
-No     Subscription name    Subscription ID                       Tenant	
------  -------------------  ------------------------------------  -----------------	
-[1] *  AVD-Prod             cf8bfe92-3d85-4f0a-bbd1-ae319eefc4ee  Algonquin College	
-[2]    Azure for Students   63b5363b-132e-49e5-969c-286c6a12c8dc  Algonquin College	
-	
-The default is marked with an *; the default tenant is 'Algonquin College' and subscription is 'AVD-Prod' (cf8bfe92-3d85-4f0a-bbd1-ae319eefc4ee).	
-	
-az account set --subscription '63b5363b-132e-49e5-969c-286c6a12c8dc'	
-PS D:\BestBuyProject\store-front-L8> az aks get-credentials --resource-group BestbuyRG --name BestbuyCluster --overwrite-existing	
-Merged "BestbuyCluster" as current context in C:\Users\IMAN\.kube\config	
-PS D:\BestBuyProject\store-front-L8> 	
-	
-kubectl get nodes	
-NAME                                  STATUS   ROLES    AGE   VERSION	
-aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7	
-aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7	
-aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7	
+```bash
+cd order-service-L8
+```
+
+In the `order-service-L8` directory, create a `Dockerfile` with the following content and copy the appropriate code into it.
+
+**Build the Docker image:**
+
+```bash
+docker build -t order-service:latest .
+```
+
+**Run a Docker container from `order-service:latest` and expose it on port 3000:**
+
+```bash
+docker run --rm -d -p 3000:3000 order-service:latest
+```
+
+---
+
+### 🔹 Step 2.2. Dockerize the `product-service`
+
+```bash
+cd product-service-L8
+```
+
+In the `product-service-L8` directory, create a `Dockerfile` with the appropriate content.
+
+**Build the Docker image:**
+
+```bash
+docker build -t product-service:latest .
+```
+
+**Run the container on port 3030:**
+
+```bash
+docker run --rm -d -p 3030:3030 product-service:latest
+```
+
+### 🔹 Step 2.3. Dockerize the `store-front`
+
+```bash
+cd ..
+cd store-front-L8
+```
+
+**Build the Docker image:**
+
+```bash
+docker build -t store-front:latest .
+```
+
+**Run the container on port 80:**
+
+```bash
+docker run --rm -d -p 80:80 store-front:latest
+```
+
+### Step 3: Using Docker Compose for Local Development
+
+## Step 3.1. Create a docker-compose.yml file
+In the root directory of your project (at the same level as the `order-service-L8`, `product-service`, and `store-front` directories), create a `docker-compose.yml` file:
+
+## Step 3.2. Run the application using Docker Compose
+In your terminal, run:
+```bash
+docker-compose up --build
+```
+This will build and run all the services together. You should be able to access the store-front at `http://localhost:80`.
+```
+```
+
 
