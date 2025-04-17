@@ -242,16 +242,18 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
       - Use the following credentials to log in:
         - Username: myuser
         - Password: mypassword
-7. Clean Up Kubernetes Resources:
+       
+7. **Clean Up Kubernetes Resources:**
 - In this step, use the K8s deployment YAML file provided: `.
    - Open the terminal and navigate to the `algonquin-pet-store-all-in-one.yaml` file directory.
    - Run the following command to delete all resources defined in the YAML file.
       ```
       kubectl delete -f algonquin-pet-store-all-in-one.yaml
       ``` 
-8. Clean Up Azure Resources:
+8. **Clean Up Azure Resources:**
    - Delete the Primary Resource Group (AlgonquinPetStoreRG)
    - Delete the Managed Cluster Resource Group (MC_AlgonquinPetStoreRG_AlgonquinPetStoreRG_canadacentral)
    - Delete the Monitoring Resource Group (MA_defaultazuremonitorworkspace-cca_canadacentral_managed)
    - Delete the Network Watcher Resource Group (NetworkWatcherRG):
----
+
+# 3. Deployment Instructions
