@@ -310,5 +310,4 @@ spec:
      - **Endpoint URL**
 
 
-
 # 3. Deployment Instructions
