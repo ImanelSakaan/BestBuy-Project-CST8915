@@ -238,7 +238,7 @@ spec:
    - Open the terminal and navigate to the file directory.
    - Run the following command to apply the YAML configuration and deploy the application to AKS:
       ```
-      kubectl apply -f algonquin-pet-store-all-in-one.yaml
+      kubectl apply -f Bestbuy-store-all-in-one.yaml
       ```
 
 2. **Verify the deployment:**
