@@ -119,8 +119,6 @@ git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
 git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
 ```
 
-
-
 ### 🐳Step 2: Create an Azure Kubernetes Cluster (AKS)
 1. **Log in to Azure Portal:**
    - Go to [https://portal.azure.com](https://portal.azure.com) and log in with your Azure account.
@@ -277,18 +275,40 @@ spec:
       - Use the following credentials to log in:
         - Username: myuser
         - Password: mypassword
-       
-7. **Clean Up Kubernetes Resources:**
-- In this step, use the K8s deployment YAML file provided: `.
-   - Open the terminal and navigate to the `algonquin-pet-store-all-in-one.yaml` file directory.
-   - Run the following command to delete all resources defined in the YAML file.
-      ```
-      kubectl delete -f algonquin-pet-store-all-in-one.yaml
-      ``` 
-8. **Clean Up Azure Resources:**
-   - Delete the Primary Resource Group (AlgonquinPetStoreRG)
-   - Delete the Managed Cluster Resource Group (MC_AlgonquinPetStoreRG_AlgonquinPetStoreRG_canadacentral)
-   - Delete the Monitoring Resource Group (MA_defaultazuremonitorworkspace-cca_canadacentral_managed)
-   - Delete the Network Watcher Resource Group (NetworkWatcherRG):
+        - 
+### 🟠 Step 4: Set Up the AI Backing Services     
+1. **Create an Azure OpenAI Service Instance**
+
+   - Search for **Azure OpenAI** in the Azure Marketplace.
+
+   - **Set Up the Azure OpenAI Resource**:
+     - Choose the **East US** region for deployment to ensure capacity for **GPT-4** and **DALL·E 3** models.
+     - Fill in the required details:
+       - **Resource group**: Use an existing one or create a new group.
+       - **Pricing tier**: Select **Standard**.
+
+   - **Deploy the Resource**:
+     - Click **Review + Create**, then click **Create** to deploy the Azure OpenAI service.
+
+2. **Deploy the GPT-4 and DALL·E 3 Models**
+
+   - **Access the Azure OpenAI Resource**:
+     - Navigate to the Azure OpenAI resource you just created.
+
+   - **Deploy GPT-4**:
+     - Go to the **Model Deployments** section and click **Add Deployment**.
+     - Choose **GPT-4** as the model and provide a deployment name (e.g., `gpt-4-deployment`).
+     - Set the deployment configuration as required and deploy the model.
+
+   - **Deploy DALL·E 3**:
+     - Repeat the same process to deploy **DALL·E 3**.
+     - Use a descriptive deployment name (e.g., `dalle-3-deployment`).
+
+   - **Note Configuration Details**:
+     Once deployed, make sure to note down the following details for each model:
+     - **Deployment Name**
+     - **Endpoint URL**
+
+
 
 # 3. Deployment Instructions
