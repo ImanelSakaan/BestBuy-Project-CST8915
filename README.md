@@ -1,9 +1,7 @@
 # BestBuy-Project-CST8915
 Lab Project Assignment: Building a Cloud-Native App for Best Buy
-## **Scenario**  
 
-## **Assignment Objectives**  
-# 🏗️ System Architecture Overview
+# System Architecture Overview
 
 This document outlines the architecture of the Best Buy microservices application.
 ![image](https://github.com/user-attachments/assets/19422ce3-3682-45bb-a1db-55a0687abf29)
