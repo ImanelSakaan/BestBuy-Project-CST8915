@@ -194,7 +194,8 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
          aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
----
+...
+
 ### 🟠Step 3: Deploy the Best Buy Application
 
 1. **Apply the YAML file to the AKS cluster:**
