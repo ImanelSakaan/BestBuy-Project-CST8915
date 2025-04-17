@@ -195,6 +195,41 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
          aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 ...
+5. **Applying the YAML File:**
+## Step 3: Create Resources Using kubectl and YAML
+This section will show you how to create kubernetes resources using kubectl command and YAML file.
+
+### Create an Azure Kubernetes Cluster:
+Create an AKS cluster with one worker node for this exercise.
+
+### Create a Pod:
+- Using **`YAML`**
+
+ - Using **`YAML`**
+   - Create a file **`my-deployment.yaml`** with the following content:
+``` yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+``` 
+
+...
 
 ### 🟠Step 3: Deploy the Best Buy Application
 
