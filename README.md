@@ -102,7 +102,7 @@ The application has the following services:
 | `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | [virtual-customer-L8](https://github.com/ImanelSakaan/virtual-customer-L8) |
 | `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | [virtual-worker-L8](https://github.com/ImanelSakaan/virtual-worker-L8) |
 
-## 2. Deployment Instructions
+# 2. Deployment Instructions
 
 ### 🌐 Step 1: Fork and Clone the Repositories
 
