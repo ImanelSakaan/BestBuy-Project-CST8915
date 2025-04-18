@@ -6,6 +6,24 @@ Welcome to the Best Buy application.
 This application consists of containerized microservices that can be easily deployed into a Kubernetes cluster. This is meant to show a realistic scenario using a polyglot architecture, event-driven design, and common open source back-end services (eg, RabbitMQ, MongoDB). The application also leverages OpenAI's models to generate product descriptions and images. This can be done using either Azure OpenAI or OpenAI.
 
 # 1. Application Architecture Overview
+## Architecture
+
+The application has the following services: 
+
+| Service | Description | Github Repo |
+| --- | --- | --- |
+| `store-front` | Web app for customers to place orders (Vue.js) | [store-front-L8](https://github.com/ImanelSakaan/store-front-L8) |
+| `store-admin` | Web app used by store employees to view orders in queue and manage products (Vue.js) | [store-admin-L8](https://github.com/ImanelSakaan/store-admin-L8) |
+| `order-service` | This service is used for placing orders (Javascript) | [order-service-L8](https://github.com/ImanelSakaan/order-service-L8) |
+| `product-service` | This service is used to perform CRUD operations on products (Rust) | [product-service-L8](https://github.com/ImanelSakaan/product-service-L8) |
+| `makeline-service` | This service handles processing orders from the queue and completing them (Golang) | [makeline-service-L8](https://github.com/ImanelSakaan/makeline-service-L8) |
+| `ai-service` | Optional service for adding generative text and graphics creation (Python) | [ai-service-L8](https://github.com/ImanelSakaan/ai-service-L8) |
+| `rabbitmq` | RabbitMQ for an order queue | [rabbitmq](https://github.com/docker-library/rabbitmq) |
+| `mongodb` | MongoDB instance for persisted data | [mongodb](https://github.com/docker-library/mongo) |
+| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | [virtual-customer-L8](https://github.com/ImanelSakaan/virtual-customer-L8) |
+| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | [virtual-worker-L8](https://github.com/ImanelSakaan/virtual-worker-L8) |
+
+
 
 This document outlines the architecture of the Best Buy microservices application.
 ![image](https://github.com/user-attachments/assets/81dbb957-03dd-4555-9e0e-27e00be75226)
@@ -69,40 +87,9 @@ This document outlines the architecture of the Best Buy microservices applicatio
 - Simulates kitchen workers completing orders.
 - Interacts with `makeline-service`.
 
----
-
-## 🔁 Communication Flow
-
-```text
-Customer (store-front) 
-   ↓
-order-service → RabbitMQ → makeline-service
-   ↓                           ↓
- MongoDB                 Updates Order Status
-
-store-admin ↔ product-service / makeline-service
-virtual-customer → order-service
-virtual-worker → makeline-service
-
 ```
-## Architecture
 
-The application has the following services: 
-
-| Service | Description | Github Repo |
-| --- | --- | --- |
-| `store-front` | Web app for customers to place orders (Vue.js) | [store-front-L8](https://github.com/ImanelSakaan/store-front-L8) |
-| `store-admin` | Web app used by store employees to view orders in queue and manage products (Vue.js) | [store-admin-L8](https://github.com/ImanelSakaan/store-admin-L8) |
-| `order-service` | This service is used for placing orders (Javascript) | [order-service-L8](https://github.com/ImanelSakaan/order-service-L8) |
-| `product-service` | This service is used to perform CRUD operations on products (Rust) | [product-service-L8](https://github.com/ImanelSakaan/product-service-L8) |
-| `makeline-service` | This service handles processing orders from the queue and completing them (Golang) | [makeline-service-L8](https://github.com/ImanelSakaan/makeline-service-L8) |
-| `ai-service` | Optional service for adding generative text and graphics creation (Python) | [ai-service-L8](https://github.com/ImanelSakaan/ai-service-L8) |
-| `rabbitmq` | RabbitMQ for an order queue | [rabbitmq](https://github.com/docker-library/rabbitmq) |
-| `mongodb` | MongoDB instance for persisted data | [mongodb](https://github.com/docker-library/mongo) |
-| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | [virtual-customer-L8](https://github.com/ImanelSakaan/virtual-customer-L8) |
-| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | [virtual-worker-L8](https://github.com/ImanelSakaan/virtual-worker-L8) |
-
-# 2. Deployment Instructions
+# 2. 🔁 Deployment Instructions
 
 ### 🌐 Step 1: Fork and Clone the Repositories
 
@@ -118,6 +105,7 @@ git clone https://github.com/ImanelSakaan/mongo.git
 git clone https://github.com/ImanelSakaan/virtual-customer-L8.git
 git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
 ```
+...
 
 ### 🐳Step 2: Create an Azure Kubernetes Cluster (AKS)
 1. **Log in to Azure Portal:**
