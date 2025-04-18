@@ -87,7 +87,7 @@ This document outlines the architecture of the Best Buy microservices applicatio
 - Simulates kitchen workers completing orders.
 - Interacts with `makeline-service`.
 
-```
+...
 
 # 2. 🔁 Deployment Instructions
 
