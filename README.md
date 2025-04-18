@@ -149,7 +149,8 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
         - **Node count**: `1`
         - Click `add`
    - Click **Review + Create**, and then **Create**. The deployment will take a few minutes.
-4. **Connect to the AKS Cluster:**
+     
+   4. **Connect to the AKS Cluster:**
    - Once the AKS cluster is deployed, navigate to the cluster in the Azure Portal.
    - In the overview page, click on **Connect**. 
    - Select **Azure CLI** tap. You will need Azure CLI. If you don't have it: [**Install Azure CLI**](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -180,40 +181,39 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
          aks-masterpool-38310052-vmss000000    Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
-...
-5. **Applying the YAML File:**
-## Step 3: Create Resources Using kubectl and YAML
-This section will show you how to create kubernetes resources using kubectl command and YAML file.
 
-### Create an Azure Kubernetes Cluster:
-Create an AKS cluster with one worker node for this exercise.
-
-### Create a Pod:
-- Using **`YAML`**
-
- - Using **`YAML`**
-   - Create a file **`my-deployment.yaml`** with the following content:
-``` yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-``` 
+   5. **Applying the YAML File:**
+   ## Step 3: Create Resources Using kubectl and YAML
+   This section will show you how to create kubernetes resources using kubectl command and YAML file.
+   
+   ### Create an Azure Kubernetes Cluster:
+   Create an AKS cluster with one worker node for this exercise.
+   
+   ### Create a Pod:
+   - Using **`YAML`**
+   
+    - Using **`YAML`**
+      - Create a file **`my-deployment.yaml`** with the following content:
+   ``` yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: my-deployment
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+         - name: nginx
+           image: nginx
+           ports:
+           - containerPort: 80
 
 ...
 
@@ -264,8 +264,10 @@ spec:
         - Username: myuser
         - Password: mypassword
         - 
+...
+
 ### 🟠 Step 4: Set Up the AI Backing Services     
-1. **Create an Azure OpenAI Service Instance**
+   1. **Create an Azure OpenAI Service Instance**
 
    - Search for **Azure OpenAI** in the Azure Marketplace.
 
@@ -278,7 +280,7 @@ spec:
    - **Deploy the Resource**:
      - Click **Review + Create**, then click **Create** to deploy the Azure OpenAI service.
 
-2. **Deploy the GPT-4 and DALL·E 3 Models**
+   2. **Deploy the GPT-4 and DALL·E 3 Models**
 
    - **Access the Azure OpenAI Resource**:
      - Navigate to the Azure OpenAI resource you just created.
@@ -297,5 +299,6 @@ spec:
      - **Deployment Name**
      - **Endpoint URL**
 
+...
 
 # 3. Deployment Instructions
