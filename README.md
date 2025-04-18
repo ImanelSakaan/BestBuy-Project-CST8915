@@ -4,6 +4,10 @@ Lab Project Assignment: Building a Cloud-Native App for Best Buy
 Welcome to the Best Buy application.
 
 This application consists of containerized microservices that can be easily deployed into a Kubernetes cluster. This is meant to show a realistic scenario using a polyglot architecture, event-driven design, and common open source back-end services (eg, RabbitMQ, MongoDB). The application also leverages OpenAI's models to generate product descriptions and images. This can be done using either Azure OpenAI or OpenAI.
+### 📹 Demo Video
+
+[Watch the Demo](2025-04-18 12-47-50.mp4)
+
 
 # 1. Application Architecture Overview
 ## Architecture
