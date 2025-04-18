@@ -8,7 +8,7 @@ This application consists of containerized microservices that can be easily depl
 # 1. Application Architecture Overview
 
 This document outlines the architecture of the Best Buy microservices application.
-![image](https://github.com/user-attachments/assets/19422ce3-3682-45bb-a1db-55a0687abf29)
+![image](https://github.com/user-attachments/assets/81dbb957-03dd-4555-9e0e-27e00be75226)
 
 ---
 
