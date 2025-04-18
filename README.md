@@ -1,5 +1,10 @@
 # BestBuy-Project-CST8915
 Lab Project Assignment: Building a Cloud-Native App for Best Buy
+### 🎥 Video Tutorial
+
+[Watch on YouTube](https://youtu.be/mOJnaTgMwYc)
+
+
 ## **Scenario**  
 Welcome to the Best Buy application.
 
