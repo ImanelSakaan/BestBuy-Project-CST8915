@@ -182,7 +182,9 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
          aks-workerspool-38310052-vmss000000   Ready    <none>   52m   v1.31.7
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 
-   5. **Applying the YAML File:**
+ 
+...
+
    ## Step 3: Create Resources Using kubectl and YAML
    This section will show you how to create kubernetes resources using kubectl command and YAML file.
    
@@ -215,9 +217,11 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
            ports:
            - containerPort: 80
 
+```
 ...
 
-### 🟠Step 3: Deploy the Best Buy Application
+
+### 🟠Step 4: Deploy the Best Buy Application
 
 1. **Apply the YAML file to the AKS cluster:**
    - In this step, use the K8s deployment YAML file provided: `algonquin-pet-store-all-in-one.yaml`.
@@ -266,7 +270,7 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
         - 
 ...
 
-### 🟠 Step 4: Set Up the AI Backing Services     
+### 🟠 Step 5: Set Up the AI Backing Services     
    1. **Create an Azure OpenAI Service Instance**
 
    - Search for **Azure OpenAI** in the Azure Marketplace.
