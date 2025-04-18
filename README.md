@@ -80,8 +80,6 @@ This document outlines the architecture of the Best Buy microservices applicatio
 - Simulates kitchen workers completing orders.
 - Interacts with `makeline-service`.
 
-...
-
 # 2. 🔁 Deployment Instructions
 
 ### 🌐 Step 1: Fork and Clone the Repositories
@@ -164,8 +162,9 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
       - The command `az aks get-credentials` pulls the necessary configuration files to enable `kubectl` to access your AKS cluster. Here’s a breakdown:
      - `--resource-group` specifies the resource group where your AKS cluster resides.
      - `--name` specifies the name of your AKS cluster.
-     - `--overwrite-existing` can be used to overwrite any existing Kubernetes configuration files for the same cluster. This is useful if you’ve connected to the cluster before or if multiple configurations exist for it.
-   - Verify Cluster Access:
+     - `--overwrite-existing` can be used to overwrite any existing Kubernetes configuration files for the same cluster. This is useful if you’ve connected to the cluster before or if 
+           multiple configurations exist for it.
+      - Verify Cluster Access:
       - Test your connection to the AKS cluster by listing all nodes:
         ```
         kubectl get nodes
@@ -176,9 +175,7 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
          aks-workerspool-38310052-vmss000001   Ready    <none>   52m   v1.31.7
 
  
-...
-
-   ## Step 3: Create Resources Using kubectl and YAML
+## 🐳Step 3: Create Resources Using kubectl and YAML
    This section will show you how to create kubernetes resources using kubectl command and YAML file.
    
    ### Create an Azure Kubernetes Cluster:
@@ -209,12 +206,9 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
            image: nginx
            ports:
            - containerPort: 80
-
 ```
-...
 
-
-### 🟠Step 4: Deploy the Best Buy Application
+## 🟠Step 4: Deploy the Best Buy Application
 
 1. **Apply the YAML file to the AKS cluster:**
    - In this step, use the K8s deployment YAML file provided: `algonquin-pet-store-all-in-one.yaml`.
@@ -261,9 +255,8 @@ git clone https://github.com/ImanelSakaan/virtual-worker-L8.git
         - Username: myuser
         - Password: mypassword
         - 
-...
 
-### 🟠 Step 5: Set Up the AI Backing Services     
+## 🟠 Step 5: Set Up the AI Backing Services     
    1. **Create an Azure OpenAI Service Instance**
 
    - Search for **Azure OpenAI** in the Azure Marketplace.
