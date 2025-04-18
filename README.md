@@ -28,7 +28,6 @@ The application has the following services:
 This document outlines the architecture of the Best Buy microservices application.
 ![image](https://github.com/user-attachments/assets/81dbb957-03dd-4555-9e0e-27e00be75226)
 
----
 
 ## 🌐 Frontend Layer
 
@@ -40,8 +39,6 @@ This document outlines the architecture of the Best Buy microservices applicatio
 ### 🟩 `store-admin` (Vue.js)
 - Used by store staff to manage products and monitor orders.
 - Communicates with `product-service` and `makeline-service`.
-
----
 
 ## ⚙️ Backend Services
 
@@ -63,8 +60,6 @@ This document outlines the architecture of the Best Buy microservices applicatio
 - Optional generative AI features (e.g., image generation, text descriptions).
 - Can be used by other services or frontend apps.
 
----
-
 ## 📦 Infrastructure
 
 ### 📨 `RabbitMQ`
@@ -74,8 +69,6 @@ This document outlines the architecture of the Best Buy microservices applicatio
 ### 🗃️ `MongoDB`
 - Central database for both products and orders.
 - Used by multiple services.
-
----
 
 ## 🤖 Simulated Workers
 
