@@ -50,7 +50,7 @@ This document outlines the architecture of the Best Buy microservices applicatio
 ## 📦 Infrastructure
 
 ### 📨 `RabbitMQ`
-- Acts as the **order queue** between `order-service` and `makeline-service`.
+- replaced it with Azure Service Bus.
 - Ensures reliable, decoupled message passing.
 
 ### 🗃️ `MongoDB`
